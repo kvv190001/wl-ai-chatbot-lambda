@@ -8,7 +8,7 @@ install package: pip install --target ./package langchain_community langchain_go
 
 docker buildx build --no-cache --platform linux/amd64 --provenance=false -t docker-image:test .
 
-docker run --platform linux/amd64 -p 9000:8080 -e GOOGLE_API_KEY="AIzaSyDU3ON-bOw3AS8DxkAoVuHPtogIgl6IY-0" docker-image:test
+docker run --platform linux/amd64 -p 9000:8080 -e GOOGLE_API_KEY="your-key-here" docker-image:test
 
 Invoke-WebRequest -Uri "http://localhost:9000/2015-03-31/functions/function/invocations" -Method Post -Body '{"body":"{\"question\":\"Where is WorldLink?\"}"}' -ContentType "application/json"
 
