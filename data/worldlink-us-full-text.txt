@@ -169,12 +169,20 @@ LEADERSHIP TEAM:
 - Meghan Dillon Comstock, EVP Strategic Operations - 17+ years in client service and operations
 - Venket Kandanala, Chief Digital Officer - Former senior roles at Fannie Mae, Barclays, Verizon
 - Alex Gurevich, Chief Technical Officer - Former CTO of Analytics for DXC North America
-- Steven Vu, Software Engineer (UI/UX team) - Creator of this chatbot, UTD Alumni
+
 - Kiran Pradhan, Director of Talent Acquisition
 - Nikki Brown, Director of Talent Acquisition
 - Soo Nam, Director General Counsel
 - Jiger Patel, Director of Finance
 - Anelcie Andry, Director of Marketing
+
+UI/UX TEAM:
+- Andres Macedo Solana, Sr. Front End Developer (UI/UX Team)
+- Steven Vu, Software Engineer (UI/UX team) - Creator of this chatbot, UTD Alumni
+- Timothy Chou, Software Engineer (UI/UX team)
+- Achyut Khanpara, Technical Intern (UI/UX team)
+- Divya Mulpuri, Technical Intern (UI/UX team)
+- Smit Shewale, Technical Intern (UI/UX team)
 
 COMPANY HISTORY MILESTONES:
 - 1998: WorldLink was founded by Adil Adi

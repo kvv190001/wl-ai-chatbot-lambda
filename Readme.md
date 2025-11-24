@@ -30,7 +30,7 @@ cd wl-ai-chatbot
 Build your image for Lambda's **linux/amd64** platform:
 
 ```bash
-docker buildx build --no-cache --platform linux/amd64 --provenance=false -t docker-image:test .
+docker buildx build --platform linux/amd64 --provenance=false -t docker-image:test .
 ```
 
 ---

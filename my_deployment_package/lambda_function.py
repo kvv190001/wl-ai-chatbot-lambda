@@ -23,6 +23,19 @@ retriever = vector_store.as_retriever(search_kwargs={'k': num_results})
 def lambda_handler(event,context):
     # event["body"] is a JSON string in API Gateway (REST)    
     body = json.loads(event.get("body", "{}"))
+
+    # 🔥 1. Detect warm ping and exit immediately
+    if body.get("warm"):
+        return {
+            "statusCode": 200,
+            "headers": {
+                "Content-Type": "application/json",
+                "Access-Control-Allow-Origin": "*"
+            },
+            "body": json.dumps({"status": "warm"})
+        }
+
+    # 🔍 Normal request handling
     question = body.get("question", "")
 
     # retrieve the relevant chunks based on the question asked
