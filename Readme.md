@@ -58,7 +58,7 @@ Invoke-WebRequest -Uri "http://localhost:9000/2015-03-31/functions/function/invo
 ### Log in to ECR
 
 ```bash
-aws ecr get-login-password --region us-east-2 | docker login --username AWS --password-stdin 586986619509.dkr.ecr.us-east-2.amazonaws.com
+aws ecr get-login-password --region region | docker login --username AWS --password-stdin aws_account_id.dkr.ecr.region.amazonaws.com
 ```
 
 ### Create ECR Repository
