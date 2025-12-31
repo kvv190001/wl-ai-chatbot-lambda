@@ -60,6 +60,7 @@ Invoke-WebRequest -Uri "http://localhost:9000/2015-03-31/functions/function/invo
 ```bash
 aws ecr get-login-password --region region | docker login --username AWS --password-stdin aws_account_id.dkr.ecr.region.amazonaws.com
 ```
+Make sure to replace region, aws_account_id with real values
 
 ### Create ECR Repository
 
@@ -81,6 +82,10 @@ docker tag docker-image:test <ECRrepositoryUri>:latest
 docker push <ECRrepositoryUri>:latest
 ```
 
+### Create Lambda Function and API Gateway
+
+Create Lambda Function using the ECR image, create API Gateway (REST API) attached to Lambda function 
+
 ---
 
 ## 4. Test Through API Gateway
@@ -88,10 +93,7 @@ docker push <ECRrepositoryUri>:latest
 For PowerShell:
 
 ```powershell
-Invoke-RestMethod -Uri "https://c360rzfy93.execute-api.us-east-2.amazonaws.com/" `
-    -Method POST `
-    -Body (@{ question = "Where is WorldLink?" } | ConvertTo-Json) `
-    -ContentType "application/json"
+Invoke-RestMethod -Uri "https://f4z2eqyvek.execute-api.us-east-2.amazonaws.com/default/wl-ai-chatbot-lambda" -Method POST -Body (@{ question = "Where is WorldLink?" } | ConvertTo-Json) -ContentType "application/json"
 ```
 
 ---

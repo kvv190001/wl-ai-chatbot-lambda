@@ -20,7 +20,42 @@ vector_store = FAISS.load_local(FAISS_PATH, embeddings_model, allow_dangerous_de
 num_results = 5
 retriever = vector_store.as_retriever(search_kwargs={'k': num_results})
 
+# ------------------------
+# 🔐 Allowed Origins
+# ------------------------
+ALLOWED_ORIGINS = {
+    "http://localhost:3000",
+    "https://worldlinklabs.ai"
+}
+
+def check_origin(event):
+    """Validate origin header and return a 403 response if invalid."""
+    headers = event.get("headers", {}) or {}
+
+    # API Gateway sometimes sends lowercase or uppercase
+    origin = headers.get("origin") or headers.get("Origin")
+
+    # No origin → block
+    if not origin or origin not in ALLOWED_ORIGINS:
+        return {
+            "statusCode": 403,
+            "headers": {
+                "Content-Type": "application/json",
+                "Access-Control-Allow-Origin": origin if origin else "",
+                "Access-Control-Allow-Credentials": True,
+            },
+            "body": json.dumps({"message": "Forbidden: Origin not allowed"})
+        }
+    return None  # means origin is valid
+
 def lambda_handler(event,context):
+    # ---------------------------------
+    # 🔐 Origin security check
+    # ---------------------------------
+    origin_check = check_origin(event)
+    if origin_check:
+        return origin_check  # Block immediately if not allowed
+    
     # event["body"] is a JSON string in API Gateway (REST)    
     body = json.loads(event.get("body", "{}"))
 
