@@ -1,0 +1,42 @@
+image: atlassian/default-image:3
+
+pipelines:
+  branches:
+    main:
+      - step:
+          name: Build and Push to ECR
+          services:
+            - docker
+          caches:
+            - docker
+          script:
+            - cd my_deployment_package
+
+            # Login to ECR
+            - aws ecr get-login-password --region $AWS_REGION |
+              docker login --username AWS --password-stdin
+              $AWS_ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com
+
+            # Build Docker image for Lambda
+            - docker buildx create --use --name multiarch-builder || true
+            - docker buildx build
+                --platform linux/amd64
+                --provenance=false
+                -t $AWS_ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/$ECR_REPO_NAME:latest
+                --push
+                .
+
+      - step:
+          name: Deploy to Lambda
+          script:
+            - aws lambda update-function-code
+                --function-name $LAMBDA_FUNCTION_NAME
+                --image-uri $AWS_ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/$ECR_REPO_NAME:latest
+                --region $AWS_REGION
+
+            - aws lambda wait function-updated
+                --function-name $LAMBDA_FUNCTION_NAME
+                --region $AWS_REGION
+
+            - echo "Deploy complete!"
+          
