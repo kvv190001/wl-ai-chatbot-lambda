@@ -17,7 +17,7 @@ llm = ChatGoogleGenerativeAI(temperature=0.5, model="gemini-2.5-flash")
 vector_store = FAISS.load_local(FAISS_PATH, embeddings_model, allow_dangerous_deserialization=True)
 
 # Set up the vectorstore to be the retriever
-num_results = 5
+num_results = 10
 retriever = vector_store.as_retriever(search_kwargs={'k': num_results})
 
 # ------------------------
@@ -25,7 +25,10 @@ retriever = vector_store.as_retriever(search_kwargs={'k': num_results})
 # ------------------------
 ALLOWED_ORIGINS = {
     "http://localhost:3000",
-    "https://worldlinklabs.ai"
+    "http://127.0.0.1:3000",
+    "https://worldlinklabs.ai",
+    "dev-wl-labs.xyz",
+    "qa-wl-labs.xyz"
 }
 
 def check_origin(event):
@@ -85,6 +88,15 @@ def lambda_handler(event,context):
     rag_prompt = f"""
     You are an assistant for WorldLink.
     Your job is to answer questions based solely on the provided knowledge.
+
+    Formatting Rules (VERY IMPORTANT):
+    - Use clear paragraph spacing.
+    - Use bullet points ("-") when listing multiple items.
+    - Each bullet point must be on its own line.
+    - Make answers clean and easy to read.
+    - If listing organizations, services, or features, ALWAYS use bullet points.
+    - When introducing a list with a colon, place the first bullet immediately on the next line (no blank line).
+    - Do NOT use any Markdown formatting (no **, no *, no #, no backticks). Use plain text only.
 
     However, follow these special rules:
 
