@@ -29,11 +29,11 @@ pipelines:
 
             # Update Lambda function
             - aws lambda update-function-code \
-                --function-name $LAMBDA_FUNCTION_NAME \
-                --image-uri $AWS_ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/$ECR_REPO_NAME:$IMAGE_TAG \
-                --region $AWS_REGION
+              --function-name $LAMBDA_FUNCTION_NAME \
+              --image-uri $AWS_ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/$ECR_REPO_NAME:$IMAGE_TAG \
+              --region $AWS_REGION
             
             # Wait for Lambda function to be updated
             - aws lambda wait function-updated \
-                --function-name $LAMBDA_FUNCTION_NAME \
-                --region $AWS_REGION
+              --function-name $LAMBDA_FUNCTION_NAME \
+              --region $AWS_REGION
