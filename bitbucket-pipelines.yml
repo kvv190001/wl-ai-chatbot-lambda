@@ -40,13 +40,8 @@ pipelines:
           script:
             - export IMAGE_URI=$(cat my_deployment_package/image_uri.txt)
 
-            - aws lambda update-function-code \
-                --function-name $LAMBDA_FUNCTION_NAME \
-                --image-uri $IMAGE_URI \
-                --region $AWS_REGION
+            - aws lambda update-function-code --function-name $LAMBDA_FUNCTION_NAME --image-uri $IMAGE_URI --region $AWS_REGION
 
-            - aws lambda wait function-updated \
-                --function-name $LAMBDA_FUNCTION_NAME \
-                --region $AWS_REGION
+            - aws lambda wait function-updated --function-name $LAMBDA_FUNCTION_NAME --region $AWS_REGION
 
             - echo "Deployment complete!"
