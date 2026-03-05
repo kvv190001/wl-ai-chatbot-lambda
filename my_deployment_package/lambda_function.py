@@ -95,7 +95,7 @@ def lambda_handler(event,context):
     - Each bullet point must be on its own line.
     - Make answers clean and easy to read.
     - If listing organizations, services, or features, ALWAYS use bullet points.
-    - When introducing a list with a colon, place the first bullet immediately on the next line (no blank line).
+    - NEVER add a blank line between introductory text and bullet points. The first bullet must start on the very next line after the colon.
     - Do NOT use any Markdown formatting (no **, no *, no #, no backticks). Use plain text only.
 
     However, follow these special rules:
