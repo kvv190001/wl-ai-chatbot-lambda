@@ -4,7 +4,7 @@ pipelines:
   branches:
     main:
       - step:
-          name: Build and Deploy
+          name: Build and Push Image
           services:
             - docker
           caches:
@@ -15,20 +15,38 @@ pipelines:
             # Install AWS CLI
             - apt-get update && apt-get install -y awscli
 
-            # Set variables
+            # Define image tag
             - export IMAGE_TAG=$BITBUCKET_COMMIT
+            - export IMAGE_URI=$AWS_ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/$ECR_REPO_NAME:$IMAGE_TAG
 
             # Login to ECR
-            - aws ecr get-login-password --region $AWS_REGION |
-              docker login --username AWS --password-stdin
-              $AWS_ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com
+            - aws ecr get-login-password --region $AWS_REGION | docker login --username AWS --password-stdin $AWS_ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com
 
-            # Build Docker image for Lambda
-            - docker build -t $AWS_ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/$ECR_REPO_NAME:$IMAGE_TAG .
-            - docker push $AWS_ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/$ECR_REPO_NAME:$IMAGE_TAG
+            # Build image
+            - docker build -t $IMAGE_URI .
 
-            # Update Lambda function
-            - aws lambda update-function-code --function-name $LAMBDA_FUNCTION_NAME --image-uri $AWS_ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/$ECR_REPO_NAME:$IMAGE_TAG --region $AWS_REGION
-            
-            # Wait for Lambda function to be updated
-            - aws lambda wait function-updated --function-name $LAMBDA_FUNCTION_NAME --region $AWS_REGION
+            # Push image
+            - docker push $IMAGE_URI
+
+            # Save image uri for next step
+            - echo $IMAGE_URI > image_uri.txt
+
+          artifacts:
+            - my_deployment_package/image_uri.txt
+
+      - step:
+          name: Deploy Lambda
+          image: amazon/aws-cli
+          script:
+            - export IMAGE_URI=$(cat my_deployment_package/image_uri.txt)
+
+            - aws lambda update-function-code \
+                --function-name $LAMBDA_FUNCTION_NAME \
+                --image-uri $IMAGE_URI \
+                --region $AWS_REGION
+
+            - aws lambda wait function-updated \
+                --function-name $LAMBDA_FUNCTION_NAME \
+                --region $AWS_REGION
+
+            - echo "Deployment complete!"
