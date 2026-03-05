@@ -12,6 +12,8 @@ pipelines:
           script:
             - cd my_deployment_package
 
+            - apt-get update && apt-get install -y awscli
+
             # Login to ECR
             - aws ecr get-login-password --region $AWS_REGION |
               docker login --username AWS --password-stdin
