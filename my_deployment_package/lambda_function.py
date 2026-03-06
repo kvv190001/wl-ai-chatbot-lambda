@@ -17,7 +17,7 @@ llm = ChatGoogleGenerativeAI(temperature=0.5, model="gemini-2.5-flash")
 vector_store = FAISS.load_local(FAISS_PATH, embeddings_model, allow_dangerous_deserialization=True)
 
 # Set up the vectorstore to be the retriever
-num_results = 10
+num_results = 5
 retriever = vector_store.as_retriever(search_kwargs={'k': num_results})
 
 # ------------------------
@@ -82,11 +82,23 @@ def lambda_handler(event,context):
     # add all the chunks to 'knowledge'
     knowledge = ""
 
+    # collect possible source URLs
+    sources = set()
+
+    for doc in docs:
+        knowledge += doc.page_content + "\n\n"
+
+        if "url" in doc.metadata:
+            sources.add(doc.metadata["url"])
+
+    # pass available links into the prompt
+    source_text = "\n".join(sources)
+
     for doc in docs:
         knowledge += doc.page_content+"\n\n"
 
     rag_prompt = f"""
-    You are an assistant for WorldLink.
+    You are an assistant for WorldLink, speaking AS a WorldLink representative.
     Your job is to answer questions based solely on the provided knowledge.
 
     Formatting Rules (VERY IMPORTANT):
@@ -109,13 +121,17 @@ def lambda_handler(event,context):
 
     3. For all other questions, you MUST answer ONLY using the information in 'The Knowledge' and not your internal knowledge.
 
-    4. Never mention the knowledge section to the user.
+    4. If a relevant webpage link is provided, you MAY include it at the end of the answer.
+
+    5. For vague or broad questions (like "tell me about WorldLink", "what do you do", "what services do you offer"), give a SHORT summary (4-5 sentences max) and then ask the user what specific area they would like to know more about. Offer 2-3 specific topics they can choose from based on WorldLink's services.
 
     ---
 
     The Question: {question}
 
     The Knowledge: {knowledge}
+
+    Available Links: {source_text}
     """
 
     response = llm.invoke(rag_prompt)
