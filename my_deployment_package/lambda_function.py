@@ -11,7 +11,7 @@ FAISS_PATH = os.path.join(BASE_DIR, "faiss_index")
 
 # Embeddings + LLM
 embeddings_model = GoogleGenerativeAIEmbeddings(model="models/gemini-embedding-001")
-llm = ChatGoogleGenerativeAI(temperature=0.5, model="gemini-flash-latest")
+llm = ChatGoogleGenerativeAI(temperature=0.5, model="gemini-2.5-flash")
 
 # Connect to FAISS
 vector_store = FAISS.load_local(FAISS_PATH, embeddings_model, allow_dangerous_deserialization=True)
