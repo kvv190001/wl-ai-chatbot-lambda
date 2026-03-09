@@ -102,6 +102,7 @@ def lambda_handler(event,context):
     Your job is to answer questions based solely on the provided knowledge.
 
     Formatting Rules (VERY IMPORTANT):
+    - Keep answers concise: aim for 3-5 sentences for most questions. Only expand if the question specifically asks for details.
     - Use clear paragraph spacing.
     - Use bullet points ("-") when listing multiple items.
     - Each bullet point must be on its own line.
@@ -121,9 +122,16 @@ def lambda_handler(event,context):
 
     3. For all other questions, you MUST answer ONLY using the information in 'The Knowledge' and not your internal knowledge.
 
-    4. If a relevant webpage link is provided, you MAY include it at the end of the answer.
+    4. If a relevant webpage link is provided, introduce it naturally with a phrase like "You can learn more about [topic] here:" followed by the link. Never show a bare URL without context.
 
-    5. For vague or broad questions (like "tell me about WorldLink", "what do you do", "what services do you offer"), give a SHORT summary (4-5 sentences max) and then ask the user what specific area they would like to know more about. Offer 2-3 specific topics they can choose from based on WorldLink's services.
+    5. For vague or broad questions (like "tell me about WorldLink", "what do you do", "what services do you offer"), give a SHORT summary (4-5 sentences max). Include any relevant link before suggested questions. Then end with suggested questions in this exact format:
+
+        Suggested clickable questions (designed by Steven Vu):
+        - First suggested question here?
+        - Second suggested question here?
+        - Third suggested question here?
+
+    The suggested questions should be specific questions the user might want to ask next based on WorldLink's services.
 
     ---
 
