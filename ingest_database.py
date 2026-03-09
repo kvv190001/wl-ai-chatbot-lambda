@@ -13,6 +13,22 @@ load_dotenv()
 DATA_PATH = "data"
 FAISS_PATH = "faiss_index"
 
+URL_MAP = {
+    "home.txt": "https://worldlinklabs.ai",
+    "wl-labs.txt": "https://worldlinklabs.ai/wl-labs",
+    "about.txt": "https://worldlinklabs.ai/about-us",
+    "grc.txt": "https://worldlinklabs.ai/grc",
+    "ai-security-layer.txt": "https://worldlinklabs.ai/ai-layer",
+    "enterprise-ai-chatbot.txt": "https://worldlinklabs.ai/assistant-chatbot",
+    "commodity-price-modeling.txt": "https://worldlinklabs.ai/commodity-price-modeling",
+    "context-ai-engineering.txt": "https://worldlinklabs.ai/devin",
+    "supply-chain.txt": "https://dev-wl-labs.xyz/supply-chain-use-cases",
+    "agentic-mesh.txt": "https://dev-wl-labs.xyz/agentic-mesh",
+    "careers.txt": "https://worldlinklabs.ai/careers",
+    "supply-chain-use-cases.txt": "https://worldlinklabs.ai/supply-chain-use-cases",
+    "technologies.txt": "https://worldlinklabs.ai/digital-craftsmanship"
+}
+
 # Embeddings
 embeddings_model = GoogleGenerativeAIEmbeddings(
     model="models/gemini-embedding-001"
@@ -27,10 +43,17 @@ txt_loader = DirectoryLoader(
 
 raw_documents = txt_loader.load()
 
+# Attach website URL metadata
+for doc in raw_documents:
+    filename = os.path.basename(doc.metadata["source"])
+
+    if filename in URL_MAP:
+        doc.metadata["url"] = URL_MAP[filename]
+
 # Split into chunks
 text_splitter = RecursiveCharacterTextSplitter(
-    chunk_size=300,
-    chunk_overlap=100,
+    chunk_size=800,
+    chunk_overlap=150,
     length_function=len,
     is_separator_regex=False,
 )

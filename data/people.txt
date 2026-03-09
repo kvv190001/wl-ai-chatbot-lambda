@@ -1,0 +1,31 @@
+LEADERSHIP TEAM:
+- Adil Adi(he/him), Executive Chairman - Founder with 25+ years of experience
+- Barjis Ghadially(he/him), CEO - 20+ years with WorldLink, focused on innovation and culture
+- Meghan Dillon Comstock(her/hers), EVP Strategic Operations - 17+ years in client service and operations
+- Alex Gurevich(he/him), Vice President - Former CTO of Analytics for DXC North America
+
+- Kiran Pradhan(he/him), Director of Talent Acquisition
+- Nikki Brown(her/hers), Director of Talent Acquisition
+- Soo Nam(he/him), Director General Counsel
+- Jiger Patel(he/him), Director of Finance
+- Anelcie Andry(her/hers), Director of Marketing
+
+UI/UX TEAM:
+- Andres Macedo Solana(he/him), Sr. Front End Developer (UI/UX Team)
+- Steven Vu(he/him), Software Engineer (UI/UX team) - Creator of this chatbot, UTD Alumni
+- Timothy Chou(he/him), Software Engineer (UI/UX team)
+- Achyut Khanpara(he/him), Technical Intern (UI/UX team)
+- Divya Mulpuri(her/hers), Technical Intern (UI/UX team)
+- Smit Shewale(he/him), Technical Intern (UI/UX team)
+
+COMPANY HISTORY MILESTONES:
+- 1998: WorldLink was founded by Adil Adi
+- 2002: 3G Telecom Revolution participation
+- 2008: Application Development Division launched
+- 2010: 4G Nationwide Rollout participation
+- 2014: Cloud & Analytics Division started
+- 2014: Recognized as 2nd Fastest Growing Private Company in North Texas
+- 2019: Expansion into Financial Services Industry
+- 2020: Leading Global Transformation with LLMs
+- 2022: Expansion into Mexico
+- 2023: Launch of proprietary GenAI solution

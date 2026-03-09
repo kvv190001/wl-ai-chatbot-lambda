@@ -14,13 +14,19 @@ This README provides the full set of commands and steps for building, testing, a
 
 ---
 
-## 1. Download The Repo
+## 0. Prepare local development environment
 
 ### Clone the Repository
 
 ```bash
 git clone https://stevenv1@bitbucket.org/wl-ii/wl-ai-chatbot.git
-cd wl-ai-chatbot
+cd wl-ai-chatbot-lambda
+```
+
+### Ingest database
+
+```bash
+venv\Scripts\python.exe ingest_database.py
 ```
 
 ---
@@ -49,6 +55,12 @@ Using PowerShell:
 
 ```powershell
 Invoke-WebRequest -Uri "http://localhost:9000/2015-03-31/functions/function/invocations" -Method Post -Body '{"body":"{\"question\":\"Where is WorldLink?\"}"}' -ContentType "application/json"
+```
+
+or
+
+```powershell
+(Invoke-WebRequest -Uri "http://localhost:9000/2015-03-31/functions/function/invocations" -Method Post -Body '{"body":"{\"question\":\"Who is the CEO?\"}"}' -ContentType "application/json" -UseBasicParsing).Content
 ```
 
 ---

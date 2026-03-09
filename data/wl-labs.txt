@@ -1,0 +1,28 @@
+Heading: Welcome to WL Labs 
+
+Subtext: Proven Solutions deployed in both client and internal environments, offered as ready-to-use accelerators customized to your business needs" 
+
+Worldlink Labs is an AI foundry, a hands-on lab where we build, test, and deploy solutions using the latest AI technologies. Think of it as a sandbox where ideas are rapidly transformed into working systems, proven through real internal and client projects. 
+
+We don't deliver concepts or lock you into platforms. We deliver tailored, production-ready code that you fully own, including complete source code, so you can extend, adapt, and scale without dependency. 
+
+Our mission is not to linger, it's to accelerate your business in a fast-moving, ever-expanding AI landscape. We've already done the legwork: navigating the noise, testing what actually works, and eliminating the confusion that slows teams down. 
+
+With over 20 years of experience in data, analytics, and software engineering, we move fast, reduce implementation time, and help you go from idea to impact quickly and confidently.
+
+AI Solutions Grid — 7 cards: 
+1. Supply Chain Use Cases — "Tackle tariffs, reduce risk, optimize routes, and build an intelligent supply chain" 
+2. GRC — "AI-powered Governance, Risk, and Compliance for proactive regulatory alignment" 
+3. Commodity Price Modeling — "Real-time ML-powered price predictions through scalable API architecture" 
+4. Enterprise AI Chatbot — "RAG-powered conversational AI for customer support and employee assistance" 
+5. AI Security Layer — "Enterprise AI governance layer providing security, compliance, and visibility" 
+6. Agentic Mesh — "Integrate multiple agents for enterprise system orchestration" 
+7. Context AI Engineering — "Expert guidance on Devin, GitHub Copilot, and AI development tools" 
+
+Metrics: 100M+ Money Saved | 80%+ Return Customers | 10M+ Hours Saved 
+
+AI Roadmap — 4 steps: 
+1. Develop an AI Strategy 
+2. Pilot AI Solutions 
+3. Scale AI Across the Enterprise 
+4. Evolve with AI 

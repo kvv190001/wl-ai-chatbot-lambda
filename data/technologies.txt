@@ -1,0 +1,157 @@
+Technologies
+
+MongoDB
+Category: Database
+Description: We use MongoDB for flexible, scalable NoSQL database solutions that handle complex data structures with ease.
+
+Firebase
+Category: Database
+Description: Our Firebase expertise enables rapid development of real-time applications with seamless cloud integration.
+
+MySQL
+Category: Database
+Description: We leverage MySQL for robust relational database management in enterprise applications.
+
+PostgreSQL
+Category: Database
+Description: PostgreSQL powers our advanced data analytics and complex query requirements with superior performance.
+
+MarkLogic
+Category: Database
+Description: We implement MarkLogic for enterprise-grade multi-model database solutions.
+
+Mixtral
+Category: AI & Analytics
+Description: Our expertise in Mixtral DB helps organizations build scalable AI solutions with efficient data management.
+
+PGvector
+Category: Database
+Description: We leverage PGvector to implement powerful vector search capabilities for AI applications.
+
+AWS
+Category: Cloud
+Description: We architect and deploy scalable cloud solutions on AWS, leveraging EC2, S3, Lambda, and more.
+
+GCP
+Category: Cloud
+Description: Our GCP expertise delivers high-performance cloud infrastructure and machine learning solutions.
+
+Azure
+Category: Cloud
+Description: We build enterprise cloud solutions on Azure, integrating seamlessly with Microsoft ecosystems.
+
+FastAPI
+Category: Backend
+Description: We build high-performance Python APIs with FastAPI for lightning-fast backend services.
+
+Uvicorn
+Category: Backend
+Description: Uvicorn powers our async Python applications with exceptional speed and reliability.
+
+Rails
+Category: Backend
+Description: We craft elegant web applications with Rails, emphasizing developer productivity and clean code.
+
+Angular
+Category: Frontend
+Description: We develop enterprise-scale applications with Angular's powerful framework and TypeScript.
+
+React
+Category: Frontend
+Description: Our React expertise delivers dynamic, high-performance user interfaces with modern design patterns.
+
+Vue
+Category: Frontend
+Description: We build progressive web applications with Vue.js for intuitive and responsive experiences.
+
+RxJS
+Category: Frontend
+Description: We implement reactive programming patterns with RxJS for complex data stream management.
+
+Greensock
+Category: Frontend
+Description: We create stunning animations and interactive experiences using Greensock's powerful animation library.
+
+Java
+Category: Language
+Description: We develop robust enterprise applications with Java's time-tested reliability and performance.
+
+Lua
+Category: Language
+Description: We leverage Lua for embedded scripting for developer productivity.
+
+Databricks
+Category: AI & Analytics
+Description: We harness Databricks for unified analytics, data engineering, and machine learning at scale.
+
+Devin
+Category: AI & Analytics
+Description: We utilize Devin AI to accelerate development with autonomous coding agents.
+
+Claude
+Category: AI & Analytics
+Description: We integrate Claude for advanced natural language processing and intelligent automation.
+
+Tableau
+Category: AI & Analytics
+Description: We create compelling data visualizations and business intelligence dashboards with Tableau.
+
+DevinAI
+Category: AI & Analytics
+Description: Our DevinAI expertise accelerates development with autonomous AI agents for coding excellence.
+
+Cursor
+Category: AI & Analytics
+Description: We use Cursor to enhance developer productivity with AI-powered coding assistance.
+
+RAG (Retrieval-Augmented Generation)
+Category: AI & Analytics
+Description: Our RAG implementation expertise helps organizations build intelligent systems with contextual AI responses.
+
+MCP (Model Context Protocol)
+Category: AI & Analytics
+Description: We implement Model Context Protocol to enable seamless AI integration across your systems.
+
+DevOps
+Category: DevOps
+Description: We implement comprehensive DevOps practices for continuous integration and delivery.
+
+Kubernetes
+Category: DevOps
+Description: We orchestrate containerized applications with Kubernetes for scalable cloud deployments.
+
+Docker
+Category: DevOps
+Description: We containerize applications with Docker for consistent deployment across all environments.
+
+Visual Studio Code
+Category: DevOps
+Description: We leverage VS Code as our primary development environment with powerful extensions.
+
+NGINX
+Category: DevOps
+Description: We deploy NGINX for high-performance web serving, reverse proxying, and load balancing.
+
+Python
+Category: Language
+Description: We use Python for everything from backend development to machine learning, automation, data engineering, and AI solutions.
+
+Snowflake
+Category: Database
+Description: We leverage Snowflake for high-performance cloud data warehousing with elastic compute, secure sharing, and powerful analytics.
+
+Delta Lake
+Category: Data Lake
+Description: We leverage Delta Lake for ACID-compliant, scalable, and reliable lakehouse architectures built on open standards.
+
+Apache Iceberg
+Category: Data Lake
+Description: We implement Apache Iceberg for high-performance table formats with schema evolution and time travel.
+
+AWS Lake Formation
+Category: Data Lake
+Description: We architect secure and governed AWS data lakes using Lake Formation with fine-grained access controls.
+
+Azure Data Lake Storage (ADLS)
+Category: Data Lake
+Description: We build enterprise-scale analytics platforms using ADLS Gen2 with hierarchical namespaces and massive scalability.

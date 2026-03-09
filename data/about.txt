@@ -1,0 +1,32 @@
+Badge: Designing Trust in a Digital World 
+Heading: About WorldLink 
+Subtext: At WorldLink, we help businesses streamline operations and drive growth with tailored digital solutions. 
+
+Our Story 
+Mission statement: Our mission is to connect people, trust, and technology so organizations can move forward with confidence. 
+
+Four story paragraphs: 
+- "At Worldlink, we believe technology is most powerful when people can trust it. When leaders, engineers, risk teams, and analysts work together with shared intelligence, complexity turns into clarity — and better decisions become possible." 
+- "Since our founding, our purpose has been to bring people, governance, and intelligent systems into one unified way of working. We meet teams where they are — across security, compliance, data, and operations — helping them turn everyday challenges into measurable impact." 
+- "Our approach is open, connected, and enterprise-ready by design. We integrate with existing systems, processes, and tools so organizations can innovate today while staying prepared for tomorrow." 
+- "Thousands of teams rely on Worldlink to navigate risk, build trust, and operate responsibly. Our story is simple: empower people with intelligence that makes progress safer — and extraordinary outcomes follow."  
+
+Our Mission:
+- Heading: "Enable organizations to move forward with confidence by embedding trust, governance, and intelligence into every digital decision." 
+- Subtext: "We bring together people, data, and intelligent systems so teams can innovate responsibly, reduce risk, and create lasting impact."  
+
+Our Process:
+Heading: "Our process" 
+Subtext: "We developed an innovative and flexible process that allows us to understand your business better" 
+
+Four steps: 
+    1. Discovery — "We analyze your AI ecosystem to identify governance gaps and risk exposure points." 
+    2. Strategy — "We design tailored frameworks that align AI governance with your business objectives." 
+    3. Implementation — "We embed intelligent controls and monitoring systems into your existing workflows." 
+    4. Optimization — "We continuously refine your governance model to adapt to emerging risks and opportunities."  
+
+CEO Quote:
+"Trust is the foundation of every intelligent decision." 
+"At Worldlink, we believe that progress must be built on responsibility. As organizations navigate increasingly complex digital landscapes, our role is to ensure that innovation is supported by governance, clarity, and confidence." 
+"Our mission is simple: empower enterprises to move forward with intelligence that strengthens trust, reduces risk, and creates lasting value." 
+— Barjis Ghadially, Chief Executive Officer, Worldlink  

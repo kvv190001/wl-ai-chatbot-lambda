@@ -1,0 +1,40 @@
+Home Page
+Badge: "Founded in Dallas, Texas"
+Heading: "Working with clients worldwide"
+Description: "Proven solutions deployed in both client and internal environments offered as ready-to-use accelerators customized to your business needs"
+
+5 Solution Cards:
+- GRC Intelligence Platform — "AI-powered governance, risk, and compliance solutions"
+- Supply Chain Intelligence — "Optimize your supply chain with AI analytics"
+- AI Security Layer — "Secure-by-design AI governance and monitoring"
+- Agentic Mesh Framework — "Maximize AI coding tool effectiveness"
+- WL Labs — "Production-tested solutions, Internal + client validated, Enterprise compliance aligned, Scalable reference architectures"
+
+Our Partners:
+Heading: "Our Partners"
+Subtext: "We collaborate with industry-leading cloud providers to deliver exceptional solutions for your enterprise"
+Description: "WorldLink partners with leading cloud and data platforms to architect, implement, and operate secure, scalable enterprise solutions - accelerating outcomes from strategy to execution."
+Partners: AWS, Google Cloud Platform, Databricks, Cognition (Devin AI)
+
+FAQ Section:
+Heading: "FAQ"
+Subtext: "Get clarity on how WorldLink delivers secure, enterprise-grade AI solutions tailored to your business needs"
+
+1. Is my data safe with your AI solutions?
+- Absolutely. We implement enterprise-grade security at every layer. Our solutions leverage Retrieval-Augmented Generation (RAG) within secure VPCs, end-to-end encryption (AES-256), role-based access controls, and support fully on-premises deployments for maximum data sovereignty.
+
+2. Which Cloud technologies do you work with?
+- We're cloud-agnostic and work seamlessly across all major platforms including AWS, Microsoft Azure, and Google Cloud Platform. Our solutions also support hybrid cloud architectures and on-premises deployments, giving you complete flexibility to choose the infrastructure that best fits your security, compliance, and performance requirements. We can even orchestrate multi-cloud strategies for enhanced resilience.
+
+3. Does WorldLink use AI tools internally?
+- Yes, we practice what we preach. Our team actively experiments with and deploys the latest AI frameworks including GPT-4, Claude, Gemini, and open-source models like LLaMA and Mistral. This hands-on experience allows us to deliver faster, more accurate solutions while staying at the cutting edge of AI innovation. We continuously test emerging technologies to ensure our clients benefit from the most advanced capabilities available.
+
+Ecosystem:
+Heading: "An Adi Group Company"
+Description: "The Adi Group is a collection of organizations that collectively drives both enterprise and social innovation"
+Links: Adi Foundation (https://adifoundation-us.com/), Hyperlink (https://hyperlinkventures.com/)
+
+Contact Info:
+- Email: info@worldlink-us.com
+- Address: 880 PARKWOOD BLVD, BUILDING 2, FRISCO, TX 75034
+- Website: https://worldlinklabs.ai/contact

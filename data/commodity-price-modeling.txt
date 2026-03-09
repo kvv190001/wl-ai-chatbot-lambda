@@ -1,0 +1,247 @@
+Commodity Price Modeling
+
+Real-Time Commodity Price Predictions at Scale
+
+Transforming real-time cost optimization | price prediction | ML models | API Architecture | real-time analytics
+
+API-based ML architecture delivering instant price predictions for informed procurement decisions
+
+
+
+Impact by the Numbers
+
+60-80%
+
+Cost Reduction
+
+Savings vs. notebook-based approach
+
+200+
+
+Concurrent Users
+
+Scalable request handling
+
+12
+
+ML Models
+
+Specialized prediction endpoints
+
+<2 sec
+
+Response Time
+
+Real-time price predictions
+
+
+
+
+
+How It Works
+
+1
+
+The Problem
+
+Traditional notebook-based price prediction approaches on platforms like Databricks are costly and inefficient, requiring cluster spin-up for each request. At scale with approximately 200 concurrent requests, this leads to high operational costs, slow response times, and inability to support real-time procurement decisions.
+
+2
+
+The Approach
+
+Our API-based architecture eliminates cluster management overhead by exposing 12 ML models through Databricks Model Serving endpoints. The system uses Flask backend with in-memory caching for SKU data, enabling real-time price predictions through scalable REST APIs that support ad-hoc what-if scenario analysis.
+
+3
+
+The Solution
+
+The platform leverages Python Flask with databricks-sql-connector for lookup data, Databricks Model Serving for inference, and in-memory caching with TTL for performance. Multiple endpoints handle input requests, data enrichment, model invocation, and response formatting with horizontal scaling capabilities.
+
+4
+
+The Value/Impact
+
+Organizations achieve 60-80% cost reduction compared to notebook-based approaches, with response times under 2 seconds versus 5-15 minutes previously. The system handles 200+ concurrent requests efficiently, enabling real-time procurement decisions and interactive scenario planning.
+
+
+
+Complete Platform
+
+Real-Time Price Predictions
+
+Instant ML-powered price predictions through scalable API endpoints, eliminating costly cluster spin-up delays.
+
+* Sub-second response times
+* 200+ concurrent requests
+* No cluster management overhead
+
+Cost Optimization
+
+Reduce operational costs by 60-80% compared to notebook-based approaches while improving performance.
+
+* Eliminate cluster costs
+* Efficient resource utilization
+* Shared infrastructure scaling
+
+What-If Scenario Analysis
+
+Run ad-hoc scenarios to predict prices under different conditions and make informed procurement decisions.
+
+* Interactive scenario testing
+* Multiple parameter variations
+* Comparative analysis
+
+Enterprise-Grade Architecture
+
+Production-ready system with caching, monitoring, security, and seamless integration capabilities.
+
+* In-memory caching with TTL
+* Comprehensive monitoring
+* RESTful API integration
+
+
+
+What is Commodity Price Modeling?
+
+Commodity Price Modeling is an AI-powered solution that uses machine learning models to predict commodity prices for procurement decisions. Our system transitions from costly notebook-based approaches to an efficient API-based architecture, enabling real-time price predictions at scale. This helps organizations make informed purchasing decisions by running ad-hoc what-if scenarios to predict prices based on various market conditions and part specifications.
+
+What problem does the Commodity Price Modeling system solve?
+
+Traditional notebook-based approaches on platforms like Databricks are costly and inefficient, especially when scaling to approximately 200 concurrent requests. Each execution requires spinning up clusters, leading to high operational costs and slow response times. Our API-based architecture eliminates these bottlenecks by providing a scalable, cost-effective solution that delivers real-time price predictions without the overhead of cluster management.
+
+How does the API-based architecture improve performance?
+
+The API-based architecture eliminates the need to spin up Databricks clusters for each prediction request. Instead, the system uses multiple endpoints to receive input requests, fetch lookup data, invoke ML models through Databricks Model Serving, and return price predictions to client applications. This approach dramatically improves scalability, reduces operational costs, and enables real-time performance for concurrent users.
+
+What is the purpose of the Ideation Accelerator project?
+
+The Ideation Accelerator project exposes current price prediction ML models to applications via APIs, enabling ad-hoc what-if scenario analysis for price prediction. This initiative transforms how organizations interact with ML models, moving from manual notebook execution to automated, scalable API calls that support business decision-making in real-time.
+
+How many concurrent requests can the system handle?
+
+The new API-based architecture is designed to efficiently handle approximately 200 concurrent requests, a significant improvement over the notebook-based approach. By eliminating cluster spin-up overhead and leveraging Databricks Model Serving endpoints, the system can scale horizontally to meet demand while maintaining consistent performance and cost efficiency.
+
+What technology stack powers the Commodity Price Modeling system?
+
+The backend uses Python 3.x with Flask 3 (including flask-cors, requests, and python-dotenv) and Jinja2 for templating. The frontend leverages HTML, CSS, and vanilla JavaScript with Bootstrap 5 and Font Awesome via CDN. Data access is handled through databricks-sql-connector for SKU lookups and Databricks Model Serving with 12 endpoints. The system includes in-memory caching for SKU data with TTL, configuration via .env and app.yaml files, and optional prototype tools like FastAPI with Uvicorn, httpx, asyncio job queues, Server-Sent Events (SSE), and Databricks Jobs API for offloading.
+
+What is Databricks Model Serving?
+
+Databricks Model Serving is a managed service that hosts machine learning models as REST API endpoints. In our Commodity Price Modeling system, we use 12 Model Serving endpoints to expose trained price prediction models. This eliminates the need to run notebooks for each prediction, providing low-latency, scalable access to ML models through simple API calls.
+
+How does the system fetch lookup data?
+
+The system uses databricks-sql-connector to query Databricks SQL Warehouse for SKU lookup data. This data includes part specifications, historical pricing information, and other attributes needed for accurate price predictions. An in-memory cache with Time-To-Live (TTL) reduces database queries and improves response times for frequently accessed SKU data.
+
+What is the role of in-memory caching in the system?
+
+In-memory caching stores frequently accessed SKU lookup data with a Time-To-Live (TTL) mechanism. This reduces the number of queries to the Databricks SQL Warehouse, decreases response latency, and improves overall system performance. The cache automatically expires and refreshes data based on the configured TTL, ensuring predictions use reasonably current information while maintaining speed.
+
+How does the Flask backend work?
+
+The Flask 3 backend serves as the core application server, handling HTTP requests from client applications. It uses flask-cors for cross-origin resource sharing, enabling frontend applications to call the API from different domains. The requests library facilitates communication with Databricks Model Serving endpoints, while python-dotenv loads configuration from .env files. Jinja2 templates provide optional server-side rendering capabilities.
+
+What are the multiple endpoints in the system architecture?
+
+The system architecture includes multiple endpoints for different functions: input endpoints receive price prediction requests from client applications, lookup endpoints fetch SKU and part data from Databricks SQL Warehouse, model serving endpoints invoke the 12 Databricks ML models for price predictions, and response endpoints return formatted prediction results to requesting applications. This separation of concerns enables scalability and maintainability.
+
+How does the system process a price prediction request?
+
+When a client submits a price prediction request, the system receives the input through an API endpoint, parses the request to extract part specifications and scenario parameters, fetches relevant lookup data from the cache or Databricks SQL Warehouse, invokes the appropriate ML model through Databricks Model Serving with the enriched data, receives the predicted price from the model, and returns the formatted prediction result to the client application. This entire process happens in real-time without cluster spin-up delays.
+
+What is the difference between the notebook-based and API-based approaches?
+
+The notebook-based approach requires manually running Databricks notebooks for each prediction, spinning up compute clusters for execution, waiting for cluster initialization and notebook execution, and manually extracting results. This is costly and slow at scale. The API-based approach provides instant access through REST endpoints, no cluster management overhead, automatic scaling to handle concurrent requests, and programmatic integration with business applications. The API approach reduces costs and enables real-time decision-making.
+
+How many ML models are used for price prediction?
+
+The system uses 12 machine learning models exposed through Databricks Model Serving endpoints. These models may represent different commodity categories, prediction methodologies, or market segments. By leveraging multiple models, the system can provide specialized predictions based on part characteristics, market conditions, and other factors that influence commodity pricing.
+
+What is the role of Databricks SQL Warehouse?
+
+Databricks SQL Warehouse provides the data foundation for price predictions by storing SKU information, part specifications, historical pricing data, and other attributes needed for model inference. The system queries the SQL Warehouse to enrich prediction requests with relevant context before invoking ML models. This optional component can be replaced with other data sources depending on organizational needs.
+
+How does configuration management work?
+
+Configuration is managed through .env files for environment-specific settings like database connections, API keys, and model endpoint URLs, and app.yaml files for application-level configuration including caching parameters, timeout settings, and feature flags. This separation allows easy deployment across development, staging, and production environments without code changes.
+
+What are the optional prototype tools mentioned?
+
+For advanced use cases and prototyping, the system can leverage FastAPI with Uvicorn for high-performance async API serving, httpx for async HTTP requests to model endpoints, asyncio job queues for handling burst traffic and request prioritization, Server-Sent Events (SSE) for real-time prediction status updates to clients, and Databricks Jobs API for offloading long-running or batch prediction workloads. These tools extend the core Flask implementation for specific performance or functionality requirements.
+
+What is FastAPI and when would you use it?
+
+FastAPI is a modern, high-performance Python web framework for building APIs with automatic OpenAPI documentation and async support. In the Commodity Price Modeling context, FastAPI can replace or complement Flask for scenarios requiring higher throughput, async request handling, or automatic API documentation. It's particularly useful when scaling beyond 200 concurrent requests or when integrating with async data sources.
+
+How do Server-Sent Events (SSE) enhance the user experience?
+
+Server-Sent Events enable the server to push real-time updates to client applications over a single HTTP connection. For price predictions that may take several seconds to process, SSE allows the system to send progress updates, intermediate results, or status messages to the client. This improves user experience by providing feedback during longer-running predictions rather than forcing clients to wait for a single response.
+
+What is the Databricks Jobs API used for?
+
+The Databricks Jobs API allows the system to offload complex, long-running, or batch prediction workloads to Databricks compute clusters when needed. While the primary architecture avoids cluster spin-up for individual requests, some scenarios like bulk price predictions for thousands of parts or model retraining may benefit from cluster-based execution. The Jobs API provides this flexibility while maintaining the API-based interface for clients.
+
+How does the system handle what-if scenarios?
+
+What-if scenario analysis allows users to test different assumptions and parameters to see how they affect predicted prices. Users can modify variables like quantity, delivery timeline, supplier selection, market conditions, or part specifications through the API. The system processes each scenario independently, invoking the appropriate ML models with the modified parameters and returning predictions that help inform procurement decisions.
+
+What are the cost benefits of the API-based architecture?
+
+The API-based architecture significantly reduces costs by eliminating cluster spin-up for each prediction request, reducing compute time from minutes to seconds, enabling resource sharing across concurrent requests, using Databricks Model Serving which is optimized for inference workloads, and implementing caching to reduce redundant data fetches. Organizations typically see 60-80% cost reduction compared to notebook-based approaches while improving performance.
+
+How does the system ensure prediction accuracy?
+
+Prediction accuracy is maintained through regularly updated ML models trained on historical pricing data, enrichment of requests with relevant SKU and market data from the SQL Warehouse, use of multiple specialized models for different commodity categories, validation of input parameters before model invocation, and continuous monitoring of prediction performance against actual prices. The system can also implement Human-in-the-Loop validation for high-value procurement decisions.
+
+What is the typical response time for a price prediction?
+
+With the API-based architecture, typical response times range from 200 milliseconds to 2 seconds depending on cache hit rates, model complexity, and concurrent load. This is a dramatic improvement over the notebook-based approach which could take 5-15 minutes per prediction due to cluster initialization. Real-time response enables interactive what-if analysis and integration into procurement workflows.
+
+How does the system scale horizontally?
+
+Horizontal scaling is achieved by deploying multiple instances of the Flask application behind a load balancer, using stateless API design so any instance can handle any request, implementing distributed caching with Redis or similar for SKU data sharing across instances, and leveraging Databricks Model Serving which automatically scales to handle increased request volume. This architecture supports growth from 200 to thousands of concurrent users without major redesign.
+
+What security measures are implemented?
+
+Security measures include API authentication and authorization to control access to prediction endpoints, encryption of data in transit using HTTPS/TLS, secure storage of credentials and API keys using environment variables and secrets management, input validation to prevent injection attacks and malformed requests, rate limiting to prevent abuse and ensure fair resource allocation, and audit logging of all prediction requests for compliance and troubleshooting.
+
+How does the system integrate with existing procurement applications?
+
+Integration is achieved through RESTful APIs that follow industry standards, JSON request and response formats for easy parsing, comprehensive API documentation with examples, webhook support for asynchronous notifications, and SDKs or client libraries for popular programming languages. This allows procurement applications, ERP systems, and business intelligence tools to seamlessly incorporate price predictions into their workflows.
+
+What monitoring and observability features are included?
+
+The system includes logging of all API requests and responses with correlation IDs, performance metrics tracking for response times and throughput, error tracking and alerting for failed predictions or system issues, model performance monitoring to detect prediction drift, cache hit rate monitoring to optimize caching strategy, and dashboards for real-time visibility into system health and usage patterns.
+
+How are ML models updated without downtime?
+
+Databricks Model Serving supports blue-green deployments where new model versions are deployed alongside existing versions, traffic is gradually shifted to the new version while monitoring performance, rollback is instant if issues are detected, and old versions are retired only after the new version is validated. This ensures continuous availability while enabling regular model improvements based on new data and market conditions.
+
+What data is required to make a price prediction?
+
+A typical price prediction request requires part or SKU identifier, quantity or volume being procured, desired delivery timeline, supplier preferences or constraints, current market conditions or indicators, and any specific scenario parameters for what-if analysis. The system enriches this input with historical data, part specifications, and market intelligence from the SQL Warehouse before invoking ML models.
+
+How does caching improve system performance?
+
+Caching stores frequently accessed SKU data in memory with a Time-To-Live mechanism, reducing database query latency from hundreds of milliseconds to microseconds, decreasing load on the Databricks SQL Warehouse, enabling higher throughput for concurrent requests, and improving overall user experience with faster predictions. Cache invalidation strategies ensure data freshness while maximizing performance benefits.
+
+Can the system handle batch predictions?
+
+Yes, the system supports batch predictions through dedicated endpoints that accept multiple prediction requests in a single API call, process requests asynchronously using job queues, return batch results when all predictions complete, and optionally use the Databricks Jobs API for very large batches that benefit from cluster-based parallel processing. This is useful for scenarios like monthly procurement planning or supplier comparison analysis.
+
+What happens if a model serving endpoint is unavailable?
+
+The system implements resilience patterns including retry logic with exponential backoff for transient failures, fallback to alternative models or cached predictions when available, circuit breaker patterns to prevent cascading failures, graceful degradation with informative error messages to clients, and alerting to operations teams for investigation and remediation. This ensures high availability even when individual components experience issues.
+
+How does the system handle different commodity categories?
+
+The 12 ML models may be specialized for different commodity categories such as metals, electronics, chemicals, or agricultural products. The system routes prediction requests to the appropriate model based on part classification or SKU attributes. This specialization improves prediction accuracy by allowing models to learn category-specific pricing patterns, market dynamics, and supplier behaviors.
+
+What reporting and analytics capabilities are available?
+
+The system provides prediction history and trend analysis, comparison of predicted vs. actual prices for model validation, what-if scenario comparison reports, cost savings analysis from optimized procurement decisions, model performance metrics and accuracy reports, and API usage analytics for capacity planning. These insights help procurement teams make data-driven decisions and continuously improve the prediction process.
+
+How can WorldLink help implement Commodity Price Modeling?
+
+WorldLink brings expertise in ML model deployment, API architecture design, and Databricks platform optimization. We help assess your current price prediction processes, design scalable API-based architectures tailored to your needs, migrate from notebook-based to API-based approaches with minimal disruption, implement caching and performance optimization strategies, integrate with your existing procurement systems, and provide ongoing support to ensure you maximize value from real-time price intelligence and cost optimization.
