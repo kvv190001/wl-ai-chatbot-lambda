@@ -27,8 +27,8 @@ ALLOWED_ORIGINS = {
     "http://localhost:3000",
     "http://127.0.0.1:3000",
     "https://worldlinklabs.ai",
-    "dev-wl-labs.xyz",
-    "qa-wl-labs.xyz"
+    "https://dev-wl-labs.xyz",
+    "https://qa-wl-labs.xyz"
 }
 
 def check_origin(event):
